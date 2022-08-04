@@ -69,7 +69,7 @@ int main(void) {
 		}
 		putchar('\n');
 	}
-
+	DeketeStack(&stack);
 	
 
 	return 0;

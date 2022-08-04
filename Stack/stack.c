@@ -27,8 +27,9 @@ bool IsFull(const Stack* stack) {
 	Node* temp = (Node*)malloc(sizeof(Node));
 	if (temp == NULL)
 		return true;
-	else
-		return false;
+	
+	free(temp);
+	return false;
 
 }
 
