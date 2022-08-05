@@ -5,11 +5,11 @@
 static bool toLeft(const Item* item1, const Item* item2);
 static bool toRight(const Item* item1, const Item* item2);
 static bool isEqual(const Item* item1, const Item* item2);
-static bool recursiveSearch(Node* node, const Item* item);
+static bool recursiveSearch(const Node* node, const Item* item);
 static void prefixTraverse(const Node* node, void (*func)(Item* item));
 static void infixTraverse(const Node* node, void (*func)(Item* item));
 static void postfixTraverse(const Node* node, void (*func)(Item* item));
-static unsigned getDepth(Node* node, unsigned depth);
+static unsigned getDepth(const Node* node, unsigned depth);
 static void copyToNode(Node* node, const Item* item);
 static Node* makeNode(const Item* item);
 static void addNode(Node** node, Node* newNode);
