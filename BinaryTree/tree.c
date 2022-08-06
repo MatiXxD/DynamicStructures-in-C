@@ -6,14 +6,14 @@ static bool toLeft(const Item* item1, const Item* item2);
 static bool toRight(const Item* item1, const Item* item2);
 static bool isEqual(const Item* item1, const Item* item2);
 static bool recursiveSearch(const Node* node, const Item* item);
-static void prefixTraverse(const Node* node, void (*func)(Item* item));
-static void infixTraverse(const Node* node, void (*func)(Item* item));
-static void postfixTraverse(const Node* node, void (*func)(Item* item));
+static void prefixTraverse(Node* node, void (*func)(Item* item));
+static void infixTraverse(Node* node, void (*func)(Item* item));
+static void postfixTraverse(Node* node, void (*func)(Item* item));
 static unsigned getDepth(const Node* node, unsigned depth);
 static void copyToNode(Node* node, const Item* item);
 static Node* makeNode(const Item* item);
 static void addNode(Node** node, Node* newNode);
-static bool getParent(const Item* item, const Node* node, Node** parent);
+static bool getParent(const Item* item, Node* node, Node** parent);
 static void deleteNode(Node** node);
 static void deleteNodes(Node* root);
 
@@ -171,7 +171,7 @@ static bool recursiveSearch(const Node* node, const Item* item) {
 
 }
 
-static void prefixTraverse(const Node* node, void (*func)(Item* item)) {
+static void prefixTraverse(Node* node, void (*func)(Item* item)) {
 
 	if (node == NULL) return;
 
@@ -181,7 +181,7 @@ static void prefixTraverse(const Node* node, void (*func)(Item* item)) {
 
 }
 
-static void infixTraverse(const Node* node, void (*func)(Item* item)) {
+static void infixTraverse(Node* node, void (*func)(Item* item)) {
 
 	if (node == NULL) return;
 
@@ -191,7 +191,7 @@ static void infixTraverse(const Node* node, void (*func)(Item* item)) {
 
 }
 
-static void postfixTraverse(const Node* node, void (*func)(Item* item)) {
+static void postfixTraverse(Node* node, void (*func)(Item* item)) {
 
 	if (node == NULL) return;
 
@@ -245,7 +245,7 @@ static void addNode(Node** node, Node* newNode) {
 
 }
 
-static bool getParent(const Item* item, const Node* node, Node** parent) {
+static bool getParent(const Item* item, Node* node, Node** parent) {
 
 	if (node == NULL) return false;
 	else if (isEqual(item, &node->item)) return true;
