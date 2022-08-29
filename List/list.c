@@ -61,7 +61,7 @@ bool GetFromList(unsigned n, Item* item, const List* list){
     }
 
     Node* temp = getNode(n, list->start);
-    if(Node != NULL){
+    if(temp != NULL){
         *item = temp->item;
         return true;
     }
