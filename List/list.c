@@ -61,10 +61,14 @@ bool GetFromList(unsigned n, Item* item, const List* list){
     }
 
     Node* temp = getNode(n, list->start);
-    *item = temp->item;
-
-    return true;
-
+    if(Node != NULL){
+        *item = temp->item;
+        return true;
+    }
+    else{
+        return false;
+    }
+   
 }
 
 void TraverseList(List* list, void (*func)(Item* item)){
